@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard Solução - Desafio Bootstrap</title>
+    <!-- O aluno deve linkar o CSS compilado a partir do solucao_custom.scss -->
+    <link href="css/bootstrap.min.css" rel="stylesheet"> 
+    <!-- O CSS customizado foi removido e substituído por classes utilitárias -->
+</head>
+<!-- Adicionando data-bs-theme="dark" para compatibilidade com o tema escuro -->
+<body data-bs-theme="dark">
+
+    <header class="p-3 mb-3 border-bottom">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <span class="fs-4 text-primary">Meu Dashboard</span>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="#" class="nav-link px-2 link-secondary">Visão Geral</a></li>
+                    <li><a href="#" class="nav-link px-2 link-body-emphasis">Relatórios</a></li>
+                    <li><a href="#" class="nav-link px-2 link-body-emphasis">Configurações</a></li>
+                </ul>
+                <div class="dropdown text-end">
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Usuário
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <!-- Barra Lateral (Sidebar) - d-none d-md-block garante que só aparece em telas médias ou maiores -->
+            <div class="col-md-3 d-none d-md-block">
+                <!-- bg-body-tertiary será a cor de fundo definida no SCSS (e.g., #212121) -->
+                <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary rounded-3">
+                    <ul class="nav nav-pills flex-column mb-auto">
+                        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+                        <li><a href="#" class="nav-link link-body-emphasis">Pedidos</a></li>
+                        <li><a href="#" class="nav-link link-body-emphasis">Produtos</a></li>
+                        <li><a href="#" class="nav-link link-body-emphasis">Clientes</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Conteúdo Principal -->
+            <div class="col-md-9">
+                <div class="row">
+                    <!-- Cartão 1 - card-custom substituído por p-4 mb-4 rounded-3 shadow-lg -->
+                    <div class="col-lg-4 mb-4">
+                        <div class="p-4 mb-4 rounded-3 shadow-lg bg-primary text-white">
+                            <h5 class="card-title">Vendas</h5>
+                            <p class="card-text fs-2">R$ 12.500</p>
+                        </div>
+                    </div>
+                    <!-- Cartão 2 - card-custom substituído por p-4 mb-4 rounded-3 shadow-lg -->
+                    <div class="col-lg-4 mb-4">
+                        <div class="p-4 mb-4 rounded-3 shadow-lg bg-success text-white">
+                            <h5 class="card-title">Novos Clientes</h5>
+                            <p class="card-text fs-2">45</p>
+                        </div>
+                    </div>
+                    <!-- Cartão 3 - card-custom substituído por p-4 mb-4 rounded-3 shadow-lg -->
+                    <div class="col-lg-4 mb-4">
+                        <div class="p-4 mb-4 rounded-3 shadow-lg bg-warning text-dark">
+                            <h5 class="card-title">Taxa de Conversão</h5>
+                            <p class="card-text fs-2">3.2%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabela de Dados -->
+                <h2 class="mt-4">Relatório Recente</h2>
+                <div class="table-responsive">
+                    <!-- table-dark adicionado para melhor visualização no tema escuro -->
+                    <table class="table table-striped table-hover table-dark">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Produto</th>
+                                <th>Status</th>
+                                <th>Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>Notebook X</td><td><span class="badge text-bg-success">Entregue</span></td><td>R$ 4.500</td></tr>
+                            <tr><td>2</td><td>Monitor Ultra</td><td><span class="badge text-bg-warning">Pendente</span></td><td>R$ 1.200</td></tr>
+                            <tr><td>3</td><td>Mouse Gamer</td><td><span class="badge text-bg-danger">Cancelado</span></td><td>R$ 150</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

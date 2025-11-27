@@ -1,0 +1,63 @@
+// 1. Importe as funções e variáveis do Bootstrap primeiro
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+// 2. SOBRESCRVA AS VARIÁVEIS PADRÃO AQUI (Tema Dark Mode)
+// ******************************************************************
+$primary: #00bcd4; // Ciano para destaque
+$secondary: #ff9800; // Laranja para secundário
+$body-bg: #121212; // Fundo escuro
+$body-color: #f0f0f0; // Texto claro
+$link-color: $primary; // Links na cor primária
+$font-family-sans-serif: "Roboto", sans-serif; // Fonte de exemplo
+
+// Altera a cor de fundo dos elementos "tertiary" para um cinza escuro
+$body-tertiary-bg: #212121; 
+
+// ******************************************************************
+
+// 3. Importe o restante do Bootstrap
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/dropdown";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar";
+@import "bootstrap/scss/card";
+@import "bootstrap/scss/accordion";
+@import "bootstrap/scss/breadcrumb";
+@import "bootstrap/scss/pagination";
+@import "bootstrap/scss/badge";
+@import "bootstrap/scss/alert";
+@import "bootstrap/scss/progress";
+@import "bootstrap/scss/list-group";
+@import "bootstrap/scss/close";
+@import "bootstrap/scss/toasts";
+@import "bootstrap/scss/modal";
+@import "bootstrap/scss/tooltip";
+@import "bootstrap/scss/popover";
+@import "bootstrap/scss/carousel";
+@import "bootstrap/scss/spinners";
+@import "bootstrap/scss/offcanvas";
+@import "bootstrap/scss/placeholders";
+
+// 4. Importe as APIs de utilitários e gere as classes
+@import "bootstrap/scss/helpers";
+@import "bootstrap/scss/utilities/api";
+
+// 5. Adicione qualquer CSS personalizado extra (se necessário)
+// Para o tema Dark Mode, podemos garantir que o texto da tabela seja claro
+.table {
+    --bs-table-color: #f0f0f0;
+}
