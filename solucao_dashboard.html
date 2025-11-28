@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
+    <!-- Alunas: Fabrine V. Velame e Leisaluz da S. Assumpção - Turma: 3B info -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dashboard Solução - Desafio Bootstrap</title>
@@ -9,22 +10,80 @@
     <!-- O CSS customizado foi removido e substituído por classes utilitárias -->
     <link rel="stylesheet" href="solucao_custom.scss" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-   
+    <style>
+        /*Tema: Dark */
+        :root{
+            --cor-fundo: #1C1678;
+            --cor-primaria: #3529d7;
+            --cor-destaque: #E83C91;
+            --cor-texto: white;
+            --cor-azul-claro: #7BC9FF;
+            --cor-ciano: #A3FFD6;
+        }
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--cor-texto);
+        }
+        body{
+            background-color: var(--cor-fundo); 
+        }
+        li > a{
+            color: var(--cor-texto) !important;;
+        }
+        #select{
+            color: var(--cor-destaque);
+        }
+        .nav-item{
+            background-color: var(--cor-primaria);
+            border-radius: 8px;
+        }
+        header{
+            box-shadow: 1px 1px 4px var(--cor-primaria);
+        }
+        #venda{
+            background-color: var(--cor-destaque);
+        }
+        #cliente{
+            background-color: var(--cor-azul-claro);
+        }
+        #Taxa{
+            background-color: var(--cor-primaria);
+        }
+        #tabela{
+            background-color: var(--cor-primaria);
+        }
+        td > span{
+            background-color: var(--cor-azul-claro);
+            padding: 4px 12px;
+            border-radius: 20px;;
+        }
+        table{
+            border-collapse: collapse; /* Une as bordas das células */
+            border: none; /* Remove borda externa */
+            border-spacing: 0;
+            border-radius: 8px;
+        }
+        .table td, .table th {
+            padding: .75rem;
+            vertical-align: top;
+            border-top: none;
+        }
+    </style>
 </head>
 <!-- Adicionando data-bs-theme="dark" para compatibilidade com o tema escuro -->
 <body data-bs-theme="dark">
 
-    <header class="p-3 mb-3 border-bottom">
+    <header class="p-3 mb-3">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <span class="fs-4 text-primary">Meu Dashboard</span>
+                <span class="fs-4">Meu Dashboard</span>
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li><a href="#" class="nav-link px-2 link-secondary">Visão Geral</a></li>
                     <li><a href="#" class="nav-link px-2 link-body-emphasis">Relatórios</a></li>
                     <li><a href="#" class="nav-link px-2 link-body-emphasis">Configurações</a></li>
                 </ul>
                 <div class="dropdown text-end">
-                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a id="select" href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         Usuário
                     </a>
                 </div>
@@ -39,7 +98,7 @@
                 <!-- bg-body-tertiary será a cor de fundo definida no SCSS (e.g., #212121) -->
                 <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary rounded-3">
                     <ul class="nav nav-pills flex-column mb-auto">
-                        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link" aria-current="page">Home</a></li>
                         <li><a href="#" class="nav-link link-body-emphasis">Pedidos</a></li>
                         <li><a href="#" class="nav-link link-body-emphasis">Produtos</a></li>
                         <li><a href="#" class="nav-link link-body-emphasis">Clientes</a></li>
@@ -52,21 +111,21 @@
                 <div class="row">
                     <!-- Cartão 1 - card-custom substituído por p-4 mb-4 rounded-3 shadow-lg -->
                     <div class="col-lg-4 mb-4">
-                        <div class="p-4 mb-4 rounded-3 shadow-lg bg-primary text-white">
+                        <div id="venda" class="p-4 mb-4 rounded shadow-lg text-white">
                             <h5 class="card-title">Vendas</h5>
                             <p class="card-text fs-2">R$ 12.500</p>
                         </div>
                     </div>
                     <!-- Cartão 2 - card-custom substituído por p-4 mb-4 rounded-3 shadow-lg -->
                     <div class="col-lg-4 mb-4">
-                        <div class="p-4 mb-4 rounded-3 shadow-lg bg-success text-white">
+                        <div id="cliente" class="p-4 mb-4 rounded shadow-lg text-white">
                             <h5 class="card-title">Novos Clientes</h5>
                             <p class="card-text fs-2">45</p>
                         </div>
                     </div>
                     <!-- Cartão 3 - card-custom substituído por p-4 mb-4 rounded-3 shadow-lg -->
                     <div class="col-lg-4 mb-4">
-                        <div class="p-4 mb-4 rounded-3 shadow-lg bg-warning text-dark">
+                        <div id="Taxa" class="p-4 mb-4 rounded shadow-lg text-dark">
                             <h5 class="card-title">Taxa de Conversão</h5>
                             <p class="card-text fs-2">3.2%</p>
                         </div>
@@ -77,9 +136,9 @@
                 <h2 class="mt-4">Relatório Recente</h2>
                 <div class="table-responsive">
                     <!-- table-dark adicionado para melhor visualização no tema escuro -->
-                    <table class="table table-striped table-hover table-dark">
+                    <table id="tabela" class="table table-hover">
                         <thead>
-                            <tr>
+                            <tr style="color: var(--cor-fundo) !important; font-weight: 600;">
                                 <th>#</th>
                                 <th>Produto</th>
                                 <th>Status</th>
@@ -87,9 +146,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>1</td><td>Notebook X</td><td><span class="badge text-bg-success">Entregue</span></td><td>R$ 4.500</td></tr>
-                            <tr><td>2</td><td>Monitor Ultra</td><td><span class="badge text-bg-warning">Pendente</span></td><td>R$ 1.200</td></tr>
-                            <tr><td>3</td><td>Mouse Gamer</td><td><span class="badge text-bg-danger">Cancelado</span></td><td>R$ 150</td></tr>
+                            <tr><td>1</td><td>Notebook X</td><td><span style="color: var(--cor-fundo); font-weight: 600;">Entregue</span></td><td>R$ 4.500</td></tr>
+                            <tr><td>2</td><td>Monitor Ultra</td><td><span style="background-color: var(--cor-destaque) !important; color: var(--cor-fundo); font-weight: 600;">Pendente</span></td><td>R$ 1.200</td></tr>
+                            <tr><td>3</td><td>Mouse Gamer</td><td><span style="background-color: var(--cor-ciano) !important; color: var(--cor-fundo); font-weight: 600;">Cancelado</span></td><td>R$ 150</td></tr>
                         </tbody>
                     </table>
                 </div>
